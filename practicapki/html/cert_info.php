@@ -109,8 +109,8 @@ echo "</table>";
 
 ?>
 <?php
-$user = $_SERVER['SSL_CLIENT_S_DN_CN'];
-$email = $_SERVER['SSL_CLIENT_S_DN_Email'];
+$user = $certData['subject']['CN'];
+$email = $certData['subject']['emailAddress'];
 $ip = $_SERVER['REMOTE_ADDR'];
 $timestamp = date("Y-m-d H:i:s");
 $log_entry = "$timestamp, $user, $email, $ip\n";
